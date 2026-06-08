@@ -1,0 +1,320 @@
+/* ==========================
+   VARIÁVEIS
+========================== */
+
+:root {
+
+    --azul:#0d47a1;
+    --azul-celeste:#4fc3f7;
+    --azul-metalico:#1565c0;
+    --verde:#2e7d32;
+    --amarelo:#ffd54f;
+    --ouro:#ffc107;
+    --branco:#ffffff;
+    --preto:#111111;
+
+    --radius:20px;
+    --shadow:0 10px 30px rgba(0,0,0,.15);
+
+    --font-size:16px;
+}
+
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Segoe UI, sans-serif;
+    background:#f4f8fc;
+    color:#222;
+    font-size:var(--font-size);
+    line-height:1.7;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+
+    min-height:70vh;
+
+    background:
+    linear-gradient(135deg,
+    rgba(13,71,161,.95),
+    rgba(21,101,192,.85));
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:5rem 2rem;
+    color:white;
+}
+
+.hero-content{
+    max-width:1000px;
+}
+
+.hero h1{
+    font-size:clamp(2.2rem,6vw,5rem);
+    margin-bottom:1rem;
+}
+
+.hero p{
+    font-size:clamp(1rem,2vw,1.4rem);
+}
+
+/* ==========================
+   GERAL
+========================== */
+
+section{
+    padding:4rem 6%;
+}
+
+h2{
+    margin-bottom:2rem;
+    color:var(--azul);
+}
+
+/* ==========================
+   CARDS
+========================== */
+
+.card{
+    background:white;
+    padding:1.5rem;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+}
+
+.cards-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:1.5rem;
+}
+
+/* ==========================
+   IMAGENS
+========================== */
+
+.grid-imagens{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:2rem;
+}
+
+.imagem{
+    overflow:hidden;
+    border-radius:25px;
+    box-shadow:var(--shadow);
+}
+
+.imagem img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.imagem:hover img{
+    transform:scale(1.08);
+}
+
+/* ==========================
+   PASTEL
+========================== */
+
+.pastel{
+    padding:1.2rem;
+    border-radius:16px;
+    margin-bottom:1rem;
+}
+
+.azul{
+    background:#dbeeff;
+}
+
+.verde{
+    background:#dff7df;
+}
+
+.amarelo{
+    background:#fff5c9;
+}
+
+.ouro{
+    background:#ffeab0;
+}
+
+/* ==========================
+   ACCORDION
+========================== */
+
+.accordion-btn{
+
+    width:100%;
+    padding:1rem;
+    border:none;
+    cursor:pointer;
+    background:var(--azul);
+    color:white;
+    margin-top:1rem;
+    border-radius:12px;
+    text-align:left;
+}
+
+.accordion-content{
+    max-height:0;
+    overflow:hidden;
+    transition:.4s;
+    background:white;
+    border-radius:12px;
+    margin-top:.3rem;
+}
+
+.accordion-content p{
+    padding:1rem;
+}
+
+/* ==========================
+   INTERAÇÃO
+========================== */
+
+.interacao{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:2rem;
+}
+
+.comentarios,
+.formulario{
+    background:white;
+    padding:2rem;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+textarea{
+    width:100%;
+    min-height:180px;
+    padding:1rem;
+    margin:1rem 0;
+    border-radius:12px;
+}
+
+input{
+    width:100%;
+    padding:1rem;
+    margin-bottom:1rem;
+    border-radius:12px;
+}
+
+button{
+    cursor:pointer;
+}
+
+.formulario button,
+.comentarios button{
+    background:var(--verde);
+    color:white;
+    border:none;
+    padding:1rem;
+    border-radius:12px;
+}
+
+/* ==========================
+   ACESSIBILIDADE
+========================== */
+
+.acessibilidade{
+
+    position:fixed;
+    right:20px;
+    top:20px;
+
+    z-index:999;
+
+    background:white;
+    padding:1rem;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+    flex-direction:column;
+    gap:.5rem;
+}
+
+.acessibilidade button{
+    border:none;
+    padding:.8rem;
+    background:var(--azul);
+    color:white;
+    border-radius:10px;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+    padding:3rem;
+    background:#071426;
+    color:white;
+}
+
+.footer-card{
+    max-width:1200px;
+    margin:auto;
+}
+
+.frase{
+    margin-top:1rem;
+    color:var(--ouro);
+    font-weight:bold;
+}
+
+/* ==========================
+   DARK MODE
+========================== */
+
+.dark-mode{
+    background:#101418;
+    color:white;
+}
+
+.dark-mode .card,
+.dark-mode .formulario,
+.dark-mode .comentarios,
+.dark-mode .accordion-content,
+.dark-mode .acessibilidade{
+    background:#1f2937;
+    color:white;
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+@media(max-width:900px){
+
+    .interacao{
+        grid-template-columns:1fr;
+    }
+
+    .acessibilidade{
+        right:10px;
+        top:auto;
+        bottom:10px;
+    }
+
+}
